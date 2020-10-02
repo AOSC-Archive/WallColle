@@ -122,6 +122,12 @@ Therefore you can "really" pack them with your favorite packing toolchain, zip o
 
 There is no limit!
 
+## Prospective Works
+
+- JSON format lint
+- File existence check
+- Preview candidates by tags
+
 ## Copyright
 
 Copyright (c) 2020 Neruthes <i@neruthes.xyz> and 0 other contributors.
