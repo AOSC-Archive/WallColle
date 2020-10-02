@@ -57,7 +57,7 @@ At `/contributors/myname/me.json`, you should write a JSON configuration which l
             "f": "png",
             "t": "Image_Title",
             "l": "cc-by-nd-4.0",
-            "tags": [ "Abstract" ,"Nature", "Forest" ]
+            "tags": [ "Abstract", "Nature", "Forest" ]
         }
     ]
 }
@@ -88,11 +88,33 @@ Suppose that your contribution is a PNG file. You may put it in your directory a
 
 The index should be autoincremental from 0. All formats share the same counter.
 
+You may submit multiple images at once, surely.
+
+### 4. Create Pull Request
+
+Create a pull request, literally. We will review and merge, as long as the image qualifies.
+
 ## Packs
 
-### Basics
+Each pack is represented by a file in `/packs`.
 
-Each pack is represented by a file in `/packs`
+Each line consists of 3 parts:
+
+- The `uname` of the contributor
+- A colon character
+- The index of the image
+
+For example, `neruthes:0` refers to the sequence 0 image of contributor `neruthes`.
+
+Empty lines are ignored. Comment lines start with `# `.
+
+After configuring a pack definition at `/packs/packname`, run:
+
+```
+$ node make.js packname
+```
+
+Then the corresponding images will be copied to `/dist`, with a generated text description file `/dist/manifest.txt`, which includes some information of the pack and the included wallpapers (title, contributor, license).
 
 ## Contribute Code
 
@@ -104,9 +126,21 @@ Copyright (c) 2020 Neruthes <i@neruthes.xyz> and 0 other contributors.
 
 The Programs in this repository are released under GNU GPLv2.
 
+The images may have their respective licenses, as defined in the corresponding configuration files.
+
 ## Contributors
 
+- (Empty List)
+
 ## Appendix 1: Acceptable Tags
+
+Major tags and minor tags coexist. Each minor tag must belong to 1 major tag.
+
+When using any minor tag, its parent major tag must also be used.
+
+The order of the tags in this depth-prioritizingly serialized tree is the order in which the tags of a wallpaper appear in the `tags` field array.
+
+This is the tree of tags.
 
 - Abstract
   - Geometry
@@ -127,3 +161,9 @@ The Programs in this repository are released under GNU GPLv2.
   - Oasis
   - Plant
   - Water
+
+## Appendix 2: Acceptable Licenses
+
+- CC-BY-SA-4.0
+- CC-BY-ND-4.0
+- Public-Domain

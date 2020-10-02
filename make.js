@@ -11,7 +11,6 @@ const fs = require('fs');
 // --------------------------------------
 // Arguments initialization
 const PACKNAME = process.argv[2];
-const CONFIG = require('./config.json');
 
 // --------------------------------------
 // Begin function def
@@ -139,8 +138,13 @@ fs.readFile(`./packs/${PACKNAME}`, function (err, stdin, stderr) {
     packdata.manifestObj.entries.forEach(function (entryObj) {
         let srcpath = `./contributors/${entryObj.uname}/${entryObj.i}.${entryObj.f}`;
         let destpath = `./dist/${entryObj.t.replace(/ /g, '_')}.${entryObj.f}`;
-        console.log(`copying: `, srcpath, destpath);
-        fs.copyFileSync(srcpath, destpath);
+        console.log(`copying: ${srcpath} -> ${destpath}`);
+        fs.copyFile(srcpath, destpath, function (err) {
+            if (err) {
+                throw err;
+                console.error(`Error: Cannot copy the desinated file "${entryObj.uname}/${entryObj.i}.${entryObj.f}". Does it exist?`);
+            };
+        });
     });
 
     console.log(packdata.manifestStr);
