@@ -116,6 +116,8 @@ $ node make.js packname
 
 Then the corresponding images will be copied to `/dist`, with a generated text description file `/dist/manifest.txt`, which includes some information of the pack and the included wallpapers (title, contributor, license).
 
+Therefore you can "really" pack them with your favorite packing toolchain, zip or tar or whatever.
+
 ## Contribute Code
 
 There is no limit!
