@@ -106,6 +106,117 @@ const parsePackDef = function (deffile) {
     };
 };
 
+const finisherScript = function (manifestObj) {
+    /* Tree structure:
+    usr
+        share
+            background-properties
+                image-title.myname.xml
+            backgrounds
+                image-title.myname
+                    image-title.myname.png
+                xfce
+                    image-title.myname-1-1.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                    image-title.myname-16-10.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                    image-title.myname-16-9.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                    image-title.myname-21-9.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                    image-title.myname-3-2.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                    image-title.myname-4-3.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                    image-title.myname-5-4.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+            gnome-background-properties
+                image-title.myname.xml -> /usr/share/background-properties/image-title.myname.xml
+            mate-background-properties
+                image-title.myname.xml -> /usr/share/background-properties/image-title.myname.xml
+            wallpapers
+                image-title.myname
+                    contents
+                        images
+                            1024x768.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1152x768.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1280x1024.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1280x800.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1280x854.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1280x960.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1366x768.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1440x900.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1440x960.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1600x1200.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1600x900.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1680×1050.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1920x1080.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1920×1200.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            2048x1536.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            2048x2048.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            2160x1440.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            2520x1080.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            3360x1440.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            2560x2048.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            2560×1600.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            2880x1800.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            3000x2000.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            3840x2160.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            4096x4096.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            4500x3000.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            5120x4096.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            800x600.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                        screenshot.png
+                    metadata.desktop
+    */
+    try {
+        require('child_process').execSync('rm -r $PWD/usr');
+        fs.mkdirSync('usr');
+        fs.mkdirSync('usr/share');
+        fs.mkdirSync('usr/share/backgrounds');
+        fs.mkdirSync('usr/share/backgrounds/xfce');
+        fs.mkdirSync('usr/share/background-properties');
+        fs.mkdirSync('usr/share/gnome-background-properties');
+        fs.mkdirSync('usr/share/mate-background-properties');
+        fs.mkdirSync('usr/share/wallpapers');
+    } catch (e) {
+    } finally {
+    };
+    console.log(`===============================`);
+    // console.log(manifestObj);
+    manifestObj.entries.forEach(function (img) {
+        // console.log(img);
+        let stdname = `${img.t.toLowerCase().replace(/ /g, '_')}.${img.uname}`;
+        let srcimgpath = `./contributors/${img.uname}/${img.i}.${img.f}`;
+        // console.log(stdname);
+        // console.log(srcimgpath);
+        let abspathImg = `/usr/share/backgrounds/${stdname}/${stdname}.${img.f}`;
+        let abspathXml = `/usr/share/background-properties/${stdname}.xml`;
+        let relpathMds = `./usr/share/wallpapers/${stdname}/metadata.desktop`;
+
+        // Create directories
+        try {
+            fs.mkdirSync(`./usr/share/backgrounds/${stdname}`);
+            fs.mkdirSync(`./usr/share/wallpapers/${stdname}`);
+            fs.mkdirSync(`./usr/share/wallpapers/${stdname}/contents`);
+            fs.mkdirSync(`./usr/share/wallpapers/${stdname}/contents/images`);
+        } catch (e) {
+        } finally {
+        };
+
+        // Put files
+        fs.copyFileSync(srcimgpath, `./usr/share/backgrounds/${stdname}/${stdname}.${img.f}`)
+        fs.copyFileSync(srcimgpath, `./usr/share/wallpapers/${stdname}/screenshot.${img.f}`)
+
+        // Write config
+        fs.writeFileSync(abspathXml, `XML PLACEHOLDER`);
+        fs.writeFileSync(relpathMds, `metadata.desktop PLACEHOLDER`);
+
+        // Symlinks
+        [ '1-1', '16-10', '16-9', '21-9', '3-2', '4-3', '5-4' ].forEach(function (x) {
+            fs.symlinkSync(abspathImg, `./usr/share/backgrounds/xfce/${stdname}-${x}.${img.f}`);
+        });
+        fs.symlinkSync(abspathXml, `./usr/share/gnome-background-properties/${stdname}.xml`);
+        fs.symlinkSync(abspathXml, `./usr/share/mate-background-properties/${stdname}.xml`);
+        [ '1024x768.png', '1152x768.png', '1280x1024.png', '1280x800.png', '1280x854.png', '1280x960.png', '1366x768.png', '1440x900.png', '1440x960.png', '1600x1200.png', '1600x900.png', '1680×1050.png', '1920x1080.png', '1920×1200.png', '2048x1536.png', '2048x2048.png', '2160x1440.png', '2520x1080.png', '3360x1440.png', '2560x2048.png', '2560×1600.png', '2880x1800.png', '3000x2000.png', '3840x2160.png', '4096x4096.png', '4500x3000.png', '5120x4096.png', '800x600.png' ].forEach(function (x) {
+            fs.symlinkSync(abspathXml, `./usr/share/wallpapers/${stdname}/contents/images/${x}.${img.f}`);
+        });
+    });
+};
+
 // --------------------------------------
 // Begin controller logic
 
@@ -149,4 +260,6 @@ fs.readFile(`./packs/${PACKNAME}`, function (err, stdin, stderr) {
 
     console.log(packdata.manifestStr);
     console.log(`\n\nSuccessfully built the pack "${PACKNAME}" with ${packdata.manifestObj.entries.length} wallpapers.\n`);
+    console.log(`Now running finisher script...`);
+    finisherScript(packdata.manifestObj);
 });

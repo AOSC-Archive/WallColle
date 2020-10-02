@@ -55,8 +55,8 @@ At `/contributors/myname/me.json`, you should write a JSON configuration which l
         {
             "i": 0,
             "f": "png",
-            "t": "Image_Title",
-            "l": "cc-by-nd-4.0",
+            "t": "Image Title",
+            "l": "CC-BY-ND-4.0",
             "tags": [ "Abstract", "Nature", "Forest" ]
         }
     ]
