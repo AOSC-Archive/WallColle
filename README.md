@@ -50,14 +50,16 @@ At `/contributors/myname/me.json`, you should write a JSON configuration which l
 {
     "uname": "myname",
     "name": "My Name",
-    "uri": "mailto:myname@exmaple.com",
+    "email": "myname@exmaple.com",
+    "uri": "https://exmaple.com",
     "wallpapers": [
         {
             "i": 0,
             "f": "png",
             "t": "Image Title",
             "l": "CC-BY-ND-4.0",
-            "tags": [ "Abstract", "Nature", "Forest" ]
+            "tags": [ "Abstract", "Nature", "Forest" ],
+            "src": "https://example.com/myname/gallery/0"
         }
     ]
 }
@@ -67,7 +69,8 @@ Field           | Description
 --------------- | -----------
 `uname`         | Your GitHub username.
 `name`          | Your human-friendly name.
-`uri`           | Your email address () or website.
+`email`         | Your email address.
+`uri`           | Your web URI. Personal website or online profile.
 `wallpapers`    | An array of your wallpapers.
 
 For each entry in `wallpapers` field:
@@ -79,6 +82,7 @@ Field   | Description
 `t`     | The title of this image. Will be used for human-friendly display purposes. Can include letters, numbers, and hyphens. Must be unique across contributors. Use title capitalization.
 `l`     | License identifier. You can find the list of acceptable licenses in another section later.
 `tags`  | Optional field. An array of tags. Each tag can only contain lowercase letters. You can find the list of acceptable tags in another section later.
+`src`  | Optional field. The URI of the initial publication, or canonical distribution center.
 
 ### 3. Put Your Image
 

@@ -175,7 +175,7 @@ const finisherScript = function (manifestObj) {
     } catch (e) {
     } finally {
     };
-    console.log(`===============================`);
+    console.log(`===============================\n\n`);
     // console.log(manifestObj);
     manifestObj.entries.forEach(function (img) {
         // console.log(img);
@@ -198,14 +198,35 @@ const finisherScript = function (manifestObj) {
         };
 
         // Put files
+        console.log(`Copying image: ${srcimgpath}`);
         fs.copyFileSync(srcimgpath, `./usr/share/backgrounds/${stdname}/${stdname}.${img.f}`)
         fs.copyFileSync(srcimgpath, `./usr/share/wallpapers/${stdname}/screenshot.${img.f}`)
 
         // Write config
-        fs.writeFileSync(abspathXml.slice(1), `XML PLACEHOLDER`);
-        fs.writeFileSync(relpathMds, `metadata.desktop PLACEHOLDER`);
+        console.log(`Writing XML: .${abspathXml}`);
+        fs.writeFileSync('.' + abspathXml, `<?xml version='1.0' encoding='UTF-8'?>
+        <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+        <wallpapers>
+            <wallpaper delete="false">
+                <name>Campanula</name>
+                <filename>${abspathXml}</filename>
+                <artist>${img.name} &lt;${img.email}&gt;</artist>
+                <options>zoom</options>
+            </wallpaper>
+        </wallpapers>`);
+        console.log(`Writing metadata.desktop: ${relpathMds}`);
+        fs.writeFileSync(relpathMds, `
+            [Desktop Entry]
+            Name=${img.t}
+
+            X-KDE-PluginInfo-Name=${img.t}
+            X-KDE-PluginInfo-Author=${img.name}
+            X-KDE-PluginInfo-Email=${img.email}
+            X-KDE-PluginInfo-License=${img.l}
+        `.trim().replace(/\n\s+/g, '\n'));
 
         // Symlinks
+        console.log(`Creating symlinks for image "${stdname}"`);
         [ '1-1', '16-10', '16-9', '21-9', '3-2', '4-3', '5-4' ].forEach(function (x) {
             fs.symlinkSync(abspathImg, `./usr/share/backgrounds/xfce/${stdname}-${x}.${img.f}`);
         });
@@ -214,6 +235,7 @@ const finisherScript = function (manifestObj) {
         [ '1024x768.png', '1152x768.png', '1280x1024.png', '1280x800.png', '1280x854.png', '1280x960.png', '1366x768.png', '1440x900.png', '1440x960.png', '1600x1200.png', '1600x900.png', '1680×1050.png', '1920x1080.png', '1920×1200.png', '2048x1536.png', '2048x2048.png', '2160x1440.png', '2520x1080.png', '3360x1440.png', '2560x2048.png', '2560×1600.png', '2880x1800.png', '3000x2000.png', '3840x2160.png', '4096x4096.png', '4500x3000.png', '5120x4096.png', '800x600.png' ].forEach(function (x) {
             fs.symlinkSync(abspathXml, `./usr/share/wallpapers/${stdname}/contents/images/${x}.${img.f}`);
         });
+        console.log(`OK.\n`);
     });
 };
 
