@@ -196,6 +196,8 @@ This is the tree of tags.
 
 ## Appendix 2: Acceptable Licenses
 
+- Public-Domain
+- CC-BY-4.0
 - CC-BY-SA-4.0
 - CC-BY-ND-4.0
-- Public-Domain
+- CC-BY-NC-ND-4.0
