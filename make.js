@@ -48,11 +48,11 @@ const renderPackManifest = function (obj) {
     const renderLines = function (entries) {
         return entries.map(function (entry) {
             return [
-                padright(entry.t, 36),
-                padright(entry.name, 20),
-                padright(entry.l, 2)
+                padright(entry.t, 33), '   ',
+                padright(entry.name, 17), '   ',
+                entry.l
             ].join('');
-        }).join('');
+        }).join('\n');
     };
     return `
 PackName   :   ${PACKNAME}
@@ -77,7 +77,7 @@ const parsePackDef = function (deffile) {
         entries: []
     };
     rawdata.forEach(function (line, i) {
-        if (line.length > 2 && line.indexOf('# ') === -1) {
+        if (line.length > 2 && line.indexOf('# ') !== 0) {
             // Not comment
             let mymatch = line.match(/^([0-9A-Za-z_\-]+)\:(\d+)$/);
             if (mymatch) {
@@ -142,16 +142,16 @@ const finisherScript = function (manifestObj) {
                             1440x960.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
                             1600x1200.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
                             1600x900.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
-                            1680×1050.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1680x1050.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
                             1920x1080.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
-                            1920×1200.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            1920x1200.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
                             2048x1536.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
                             2048x2048.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
                             2160x1440.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
                             2520x1080.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
                             3360x1440.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
                             2560x2048.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
-                            2560×1600.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
+                            2560x1600.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
                             2880x1800.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
                             3000x2000.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
                             3840x2160.png -> /usr/share/backgrounds/image-title.myname/image-title.myname.png
@@ -175,7 +175,7 @@ const finisherScript = function (manifestObj) {
     } catch (e) {
     } finally {
     };
-    console.log(`===============================\n\n`);
+    console.log(`------------------------------\n\n`);
     // console.log(manifestObj);
     manifestObj.entries.forEach(function (img) {
         // console.log(img);
@@ -226,13 +226,18 @@ const finisherScript = function (manifestObj) {
 
         // Symlinks
         console.log(`Creating symlinks for image "${stdname}"`);
-        fs.symlinkSync(abspathImg, `./usr/share/wallpapers/${stdname}/screenshot.${img.f}`)
-        [ '1-1', '16-10', '16-9', '21-9', '3-2', '4-3', '5-4' ].forEach(function (x) {
+        fs.symlinkSync(abspathImg, `./usr/share/wallpapers/${stdname}/screenshot.${img.f}`);
+        [ '1-1', '16-10', '16-9', '21-9', '3-2', '4-3', '5-4' ].map(function (x) {
             fs.symlinkSync(abspathImg, `./usr/share/backgrounds/xfce/${stdname}-${x}.${img.f}`);
         });
         fs.symlinkSync(abspathXml, `./usr/share/gnome-background-properties/${stdname}.xml`);
         fs.symlinkSync(abspathXml, `./usr/share/mate-background-properties/${stdname}.xml`);
-        [ '1024x768.png', '1152x768.png', '1280x1024.png', '1280x800.png', '1280x854.png', '1280x960.png', '1366x768.png', '1440x900.png', '1440x960.png', '1600x1200.png', '1600x900.png', '1680×1050.png', '1920x1080.png', '1920×1200.png', '2048x1536.png', '2048x2048.png', '2160x1440.png', '2520x1080.png', '3360x1440.png', '2560x2048.png', '2560×1600.png', '2880x1800.png', '3000x2000.png', '3840x2160.png', '4096x4096.png', '4500x3000.png', '5120x4096.png', '800x600.png' ].forEach(function (x) {
+        [
+            '1024x768', '1152x768', '1280x1024', '1280x800', '1280x854', '1280x960', '1366x768',
+            '1440x900', '1440x960', '1600x1200', '1600x900', '1680x1050', '1920x1080', '1920x1200',
+            '2048x1536', '2048x2048', '2160x1440', '2520x1080', '3360x1440', '2560x2048', '2560x1600',
+            '2880x1800', '3000x2000', '3840x2160', '4096x4096', '4500x3000', '5120x4096', '800x600'
+        ].forEach(function (x) {
             fs.symlinkSync(abspathXml, `./usr/share/wallpapers/${stdname}/contents/images/${x}.${img.f}`);
         });
         console.log(`OK.\n`);

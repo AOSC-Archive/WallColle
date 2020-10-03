@@ -9,7 +9,35 @@
             "f": "png",
             "t": "Jelly Danmaku",
             "l": "CC-BY-ND-4.0",
-            "tags": [ "Abstract", "Retro" ]
+            "tags": [ "Abstract", "Meme", "Retro" ]
+        },
+        {
+            "i": 1,
+            "f": "png",
+            "t": "Jelly",
+            "l": "CC-BY-ND-4.0",
+            "tags": [ "Abstract", "Meme", "Retro" ]
+        },
+        {
+            "i": 2,
+            "f": "jpg",
+            "t": "Chess Board",
+            "l": "CC-BY-ND-4.0",
+            "tags": [ "Abstract", "Meme", "Retro" ]
+        },
+        {
+            "i": 3,
+            "f": "jpg",
+            "t": "Podka Bubbles",
+            "l": "CC-BY-ND-4.0",
+            "tags": [ "Abstract", "Meme", "Retro" ]
+        },
+        {
+            "i": 4,
+            "f": "jpg",
+            "t": "Zhuozhengyuan Bench",
+            "l": "CC-BY-ND-4.0",
+            "tags": [ "Nature", "Garden" ]
         }
     ]
 }

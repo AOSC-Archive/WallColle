@@ -24,7 +24,9 @@ It is tailored for [AOSC OS](https://aosc.io), but other communities may find th
 
 - Ratios: `1:1` or `16:10`.
 - The format should be PNG, JPEG, or SVG.
-- Minimal width: 2560px for `1:1`; 3200px for `16:10`.
+- Minimum width: 1920px for `1:1`; 2560px for `16:10`.
+- Recommended width: 5120px.
+- Maximum width: 6400px.
 - The colorspace should be sRGB.
 - The color depth should be 8 bits.
 
@@ -94,7 +96,13 @@ The index should be autoincremental from 0. All formats share the same counter.
 
 You may submit multiple images at once, surely.
 
-### 4. Create Pull Request
+### 4. Optimize Your Image
+
+You may be familiar with tools like ImageOptim. Use your favorite tools to optimize the image.
+
+The maximum size remains to be defined. More discussions are needed for deciding this parameter.
+
+### 5. Create Pull Request
 
 Create a pull request, literally. We will review and merge, as long as the image qualifies.
 
@@ -142,7 +150,17 @@ The images may have their respective licenses, as defined in the corresponding c
 
 ## Contributors
 
-- (Empty List)
+### Previous Works
+
+This repository is founded over the previous works in the following 3 repositories:
+
+- https://github.com/AOSC-Dev/aosc-os-artworks
+- https://github.com/AOSC-Dev/community-wallpapers
+- https://github.com/AOSC-Dev/AOSC-Artwork
+
+### Current Contributors
+
+- [Neruthes](https://github.com/neruthes)
 
 ## Appendix 1: Acceptable Tags
 
@@ -160,19 +178,21 @@ This is the tree of tags.
 - Civil
   - Countryside
   - Cyberpunk
-  - Cyberpunk
   - Metropolis
 - Fantasy
 - Illustration
 - Legacy
+- Meme
 - Nature
   - Desert
   - Forest
+  - Garden
   - Jungle
   - Mountain
   - Oasis
   - Plant
   - Water
+- Retro
 
 ## Appendix 2: Acceptable Licenses
 
