@@ -200,7 +200,6 @@ const finisherScript = function (manifestObj) {
         // Put files
         console.log(`Copying image: ${srcimgpath}`);
         fs.copyFileSync(srcimgpath, `./usr/share/backgrounds/${stdname}/${stdname}.${img.f}`)
-        fs.copyFileSync(srcimgpath, `./usr/share/wallpapers/${stdname}/screenshot.${img.f}`)
 
         // Write config
         console.log(`Writing XML: .${abspathXml}`);
@@ -227,6 +226,7 @@ const finisherScript = function (manifestObj) {
 
         // Symlinks
         console.log(`Creating symlinks for image "${stdname}"`);
+        fs.symlinkSync(abspathImg, `./usr/share/wallpapers/${stdname}/screenshot.${img.f}`)
         [ '1-1', '16-10', '16-9', '21-9', '3-2', '4-3', '5-4' ].forEach(function (x) {
             fs.symlinkSync(abspathImg, `./usr/share/backgrounds/xfce/${stdname}-${x}.${img.f}`);
         });
