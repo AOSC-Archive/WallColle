@@ -7,7 +7,7 @@
         "wallpapers": [
             {
                 "i": 0,
-                "f": "png",
+                "f": "jpg",
                 "t": "Jelly Danmaku",
                 "l": "CC-BY-ND-4.0",
                 "tags": [
@@ -21,7 +21,7 @@
             },
             {
                 "i": 1,
-                "f": "png",
+                "f": "jpg",
                 "t": "Jelly",
                 "l": "CC-BY-ND-4.0",
                 "tags": [
@@ -65,7 +65,7 @@
                 "i": 4,
                 "f": "jpg",
                 "t": "Zhuozhengyuan Bench",
-                "l": "CC-BY-ND-4.0",
+                "l": "CC-BY-NC-ND-4.0",
                 "tags": [
                     "Nature",
                     "Garden"
