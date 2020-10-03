@@ -202,7 +202,7 @@ const finisherScript = function (manifestObj) {
         fs.copyFileSync(srcimgpath, `./usr/share/wallpapers/${stdname}/screenshot.${img.f}`)
 
         // Write config
-        fs.writeFileSync(abspathXml, `XML PLACEHOLDER`);
+        fs.writeFileSync(abspathXml.slice(1), `XML PLACEHOLDER`);
         fs.writeFileSync(relpathMds, `metadata.desktop PLACEHOLDER`);
 
         // Symlinks
