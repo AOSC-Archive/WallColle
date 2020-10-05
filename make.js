@@ -7,6 +7,7 @@
 // --------------------------------------
 // Dependencies
 const fs = require('fs');
+const exec = require('child_process').execSync;
 
 // --------------------------------------
 // Arguments initialization
@@ -49,7 +50,7 @@ const renderPackManifest = function (obj) {
     const renderLines = function (entries) {
         return entries.map(function (entry) {
             return [
-                padright(entry.t, 33), '   ',
+                padright(entry.t.slice(0, 32), 33), '   ',
                 padright(entry.name, 17), '   ',
                 entry.l
             ].join('');
@@ -163,18 +164,16 @@ const finisherScript = function (manifestObj) {
                         screenshot.png
                     metadata.desktop
     */
-    try {
-        fs.mkdirSync(DESTDIR + '/usr');
-        fs.mkdirSync(DESTDIR + '/usr/share');
-        fs.mkdirSync(DESTDIR + '/usr/share/backgrounds');
-        fs.mkdirSync(DESTDIR + '/usr/share/backgrounds/xfce');
-        fs.mkdirSync(DESTDIR + '/usr/share/background-properties');
-        fs.mkdirSync(DESTDIR + '/usr/share/gnome-background-properties');
-        fs.mkdirSync(DESTDIR + '/usr/share/mate-background-properties');
-        fs.mkdirSync(DESTDIR + '/usr/share/wallpapers');
-    } catch (e) {
-    } finally {
-    };
+    exec(`
+        ?/usr
+        ?/usr/share
+        ?/usr/share/backgrounds
+        ?/usr/share/backgrounds/xfce
+        ?/usr/share/background-properties
+        ?/usr/share/gnome-background-properties
+        ?/usr/share/mate-background-properties
+        ?/usr/share/wallpapers
+    `.replace(/\s{8}\?/g, `mkdir ${DESTDIR}`) );
     console.log(`------------------------------\n\n`);
     // console.log(manifestObj);
     manifestObj.entries.forEach(function (img) {
@@ -183,27 +182,22 @@ const finisherScript = function (manifestObj) {
         let srcimgpath = `./contributors/${img.uname}/${img.i}.${img.f}`;
         // console.log(stdname);
         // console.log(srcimgpath);
-        let abspathImg = `${DESTDIR}/usr/share/backgrounds/${stdname}/${stdname}.${img.f}`;
-        let abspathXml = `${DESTDIR}/usr/share/background-properties/${stdname}.xml`;
-        let abspathMds = `${DESTDIR}/usr/share/wallpapers/${stdname}/metadata.desktop`;
+        let abspathImg = `/usr/share/backgrounds/${stdname}/${stdname}.${img.f}`;
+        let mockpathImg = `${DESTDIR}/usr/share/backgrounds/${stdname}/${stdname}.${img.f}`;
+        let abspathXml = `/usr/share/background-properties/${stdname}.xml`;
+        let mockpathXml = `${DESTDIR}/usr/share/background-properties/${stdname}.xml`;
+        let mockpathMds = `${DESTDIR}/usr/share/wallpapers/${stdname}/metadata.desktop`;
 
         // Create directories
-        try {
-            fs.mkdirSync(`${DESTDIR}/usr/share/backgrounds/${stdname}`);
-            fs.mkdirSync(`${DESTDIR}/usr/share/wallpapers/${stdname}`);
-            fs.mkdirSync(`${DESTDIR}/usr/share/wallpapers/${stdname}/contents`);
-            fs.mkdirSync(`${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images`);
-        } catch (e) {
-        } finally {
-        };
+        exec(`mkdir ${DESTDIR}/usr/share/backgrounds/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname}/contents ${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images`);
 
         // Put files
         console.log(`Copying image: ${srcimgpath}`);
-        fs.copyFileSync(srcimgpath, `${DESTDIR}/usr/share/backgrounds/${stdname}/${stdname}.${img.f}`);
+        fs.copyFileSync(srcimgpath, mockpathImg);
 
         // Write config
-        console.log(`Writing XML: .${abspathXml}`);
-        fs.writeFileSync('.' + abspathXml, `<?xml version='1.0' encoding='UTF-8'?>
+        console.log(`Writing XML: ${mockpathXml}`);
+        fs.writeFileSync(mockpathXml, `<?xml version='1.0' encoding='UTF-8'?>
         <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
         <wallpapers>
             <wallpaper delete="false">
@@ -213,8 +207,8 @@ const finisherScript = function (manifestObj) {
                 <options>zoom</options>
             </wallpaper>
         </wallpapers>`);
-        console.log(`Writing metadata.desktop: ${abspathMds}`);
-        fs.writeFileSync(abspathMds, `
+        console.log(`Writing metadata.desktop: ${mockpathMds}`);
+        fs.writeFileSync(mockpathMds, `
             [Desktop Entry]
             Name=${img.t}
 
@@ -226,19 +220,19 @@ const finisherScript = function (manifestObj) {
 
         // Symlinks
         console.log(`Creating symlinks for image "${stdname}"`);
-        fs.symlinkSync(abspathImg, `./usr/share/wallpapers/${stdname}/screenshot.${img.f}`);
+        fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/wallpapers/${stdname}/screenshot.${img.f}`);
         [ '1-1', '16-10', '16-9', '21-9', '3-2', '4-3', '5-4' ].map(function (x) {
-            fs.symlinkSync(abspathImg, `./usr/share/backgrounds/xfce/${stdname}-${x}.${img.f}`);
+            fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/backgrounds/xfce/${stdname}-${x}.${img.f}`);
         });
-        fs.symlinkSync(abspathXml, `./usr/share/gnome-background-properties/${stdname}.xml`);
-        fs.symlinkSync(abspathXml, `./usr/share/mate-background-properties/${stdname}.xml`);
+        fs.symlinkSync(abspathXml, `${DESTDIR}/usr/share/gnome-background-properties/${stdname}.xml`);
+        fs.symlinkSync(abspathXml, `${DESTDIR}/usr/share/mate-background-properties/${stdname}.xml`);
         [
             '1024x768', '1152x768', '1280x1024', '1280x800', '1280x854', '1280x960', '1366x768',
             '1440x900', '1440x960', '1600x1200', '1600x900', '1680x1050', '1920x1080', '1920x1200',
             '2048x1536', '2048x2048', '2160x1440', '2520x1080', '3360x1440', '2560x2048', '2560x1600',
             '2880x1800', '3000x2000', '3840x2160', '4096x4096', '4500x3000', '5120x4096', '800x600'
         ].forEach(function (x) {
-            fs.symlinkSync(abspathXml, `./usr/share/wallpapers/${stdname}/contents/images/${x}.${img.f}`);
+            fs.symlinkSync(abspathXml, `${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images/${x}.${img.f}`);
         });
         console.log(`OK.\n`);
     });
