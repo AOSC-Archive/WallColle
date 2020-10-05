@@ -11,6 +11,7 @@ const fs = require('fs');
 // --------------------------------------
 // Arguments initialization
 const PACKNAME = process.argv[2];
+const DESTDIR = process.argv[3] || '.';
 
 // --------------------------------------
 // Begin function def
@@ -163,15 +164,14 @@ const finisherScript = function (manifestObj) {
                     metadata.desktop
     */
     try {
-        require('child_process').execSync('rm -r $PWD/usr');
-        fs.mkdirSync('usr');
-        fs.mkdirSync('usr/share');
-        fs.mkdirSync('usr/share/backgrounds');
-        fs.mkdirSync('usr/share/backgrounds/xfce');
-        fs.mkdirSync('usr/share/background-properties');
-        fs.mkdirSync('usr/share/gnome-background-properties');
-        fs.mkdirSync('usr/share/mate-background-properties');
-        fs.mkdirSync('usr/share/wallpapers');
+        fs.mkdirSync(DESTDIR + '/usr');
+        fs.mkdirSync(DESTDIR + '/usr/share');
+        fs.mkdirSync(DESTDIR + '/usr/share/backgrounds');
+        fs.mkdirSync(DESTDIR + '/usr/share/backgrounds/xfce');
+        fs.mkdirSync(DESTDIR + '/usr/share/background-properties');
+        fs.mkdirSync(DESTDIR + '/usr/share/gnome-background-properties');
+        fs.mkdirSync(DESTDIR + '/usr/share/mate-background-properties');
+        fs.mkdirSync(DESTDIR + '/usr/share/wallpapers');
     } catch (e) {
     } finally {
     };
@@ -183,23 +183,23 @@ const finisherScript = function (manifestObj) {
         let srcimgpath = `./contributors/${img.uname}/${img.i}.${img.f}`;
         // console.log(stdname);
         // console.log(srcimgpath);
-        let abspathImg = `/usr/share/backgrounds/${stdname}/${stdname}.${img.f}`;
-        let abspathXml = `/usr/share/background-properties/${stdname}.xml`;
-        let relpathMds = `./usr/share/wallpapers/${stdname}/metadata.desktop`;
+        let abspathImg = `${DESTDIR}/usr/share/backgrounds/${stdname}/${stdname}.${img.f}`;
+        let abspathXml = `${DESTDIR}/usr/share/background-properties/${stdname}.xml`;
+        let abspathMds = `${DESTDIR}/usr/share/wallpapers/${stdname}/metadata.desktop`;
 
         // Create directories
         try {
-            fs.mkdirSync(`./usr/share/backgrounds/${stdname}`);
-            fs.mkdirSync(`./usr/share/wallpapers/${stdname}`);
-            fs.mkdirSync(`./usr/share/wallpapers/${stdname}/contents`);
-            fs.mkdirSync(`./usr/share/wallpapers/${stdname}/contents/images`);
+            fs.mkdirSync(`${DESTDIR}/usr/share/backgrounds/${stdname}`);
+            fs.mkdirSync(`${DESTDIR}/usr/share/wallpapers/${stdname}`);
+            fs.mkdirSync(`${DESTDIR}/usr/share/wallpapers/${stdname}/contents`);
+            fs.mkdirSync(`${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images`);
         } catch (e) {
         } finally {
         };
 
         // Put files
         console.log(`Copying image: ${srcimgpath}`);
-        fs.copyFileSync(srcimgpath, `./usr/share/backgrounds/${stdname}/${stdname}.${img.f}`)
+        fs.copyFileSync(srcimgpath, `${DESTDIR}/usr/share/backgrounds/${stdname}/${stdname}.${img.f}`);
 
         // Write config
         console.log(`Writing XML: .${abspathXml}`);
@@ -213,8 +213,8 @@ const finisherScript = function (manifestObj) {
                 <options>zoom</options>
             </wallpaper>
         </wallpapers>`);
-        console.log(`Writing metadata.desktop: ${relpathMds}`);
-        fs.writeFileSync(relpathMds, `
+        console.log(`Writing metadata.desktop: ${abspathMds}`);
+        fs.writeFileSync(abspathMds, `
             [Desktop Entry]
             Name=${img.t}
 
