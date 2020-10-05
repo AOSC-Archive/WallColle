@@ -8,7 +8,7 @@
             {
                 "i": 0,
                 "f": "jpg",
-                "t": "Jelly Danmaku",
+                "t": "Retro Jelly Danmaku",
                 "l": "CC-BY-ND-4.0",
                 "tags": [
                     "Abstract",
@@ -22,7 +22,7 @@
             {
                 "i": 1,
                 "f": "jpg",
-                "t": "Jelly",
+                "t": "Retro Jelly",
                 "l": "CC-BY-ND-4.0",
                 "tags": [
                     "Abstract",
@@ -36,7 +36,7 @@
             {
                 "i": 2,
                 "f": "jpg",
-                "t": "Chess Board",
+                "t": "Retro Chess Board",
                 "l": "CC-BY-ND-4.0",
                 "tags": [
                     "Abstract",
@@ -50,7 +50,7 @@
             {
                 "i": 3,
                 "f": "jpg",
-                "t": "Podka Bubbles",
+                "t": "Retro Podka Bubbles",
                 "l": "CC-BY-ND-4.0",
                 "tags": [
                     "Abstract",
@@ -69,6 +69,19 @@
                 "tags": [
                     "Nature",
                     "Garden"
+                ],
+                "src": "https://t.me/neruthesartworkdrafts/57",
+                "uname": "neruthes",
+                "name": "Neruthes",
+                "uri": "https://neruthes.xyz/"
+            },
+            {
+                "i": 5,
+                "f": "jpg",
+                "t": "Jelly YSGD",
+                "l": "CC-BY-NC-ND-4.0",
+                "tags": [
+                    "Meme"
                 ],
                 "uname": "neruthes",
                 "name": "Neruthes",
