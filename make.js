@@ -173,7 +173,7 @@ const finisherScript = function (manifestObj) {
         ?/usr/share/gnome-background-properties
         ?/usr/share/mate-background-properties
         ?/usr/share/wallpapers
-    `.replace(/\s{8}\?/g, `mkdir ${DESTDIR}`) );
+    `.replace(/\s{8}\?/g, `mkdir -p ${DESTDIR}`) );
     console.log(`------------------------------\n\n`);
     // console.log(manifestObj);
     manifestObj.entries.forEach(function (img) {
@@ -189,7 +189,7 @@ const finisherScript = function (manifestObj) {
         let mockpathMds = `${DESTDIR}/usr/share/wallpapers/${stdname}/metadata.desktop`;
 
         // Create directories
-        exec(`mkdir ${DESTDIR}/usr/share/backgrounds/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname}/contents ${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images`);
+        exec(`mkdir -p ${DESTDIR}/usr/share/backgrounds/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname}/contents ${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images`);
 
         // Put files
         console.log(`Copying image: ${srcimgpath}`);
