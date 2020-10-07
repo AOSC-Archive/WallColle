@@ -90,7 +90,31 @@
             {
                 "i": 6,
                 "f": "jpg",
-                "t": "Weave",
+                "t": "Weave 8",
+                "l": "CC-BY-NC-ND-4.0",
+                "tags": [
+                    "Abstract"
+                ],
+                "uname": "neruthes",
+                "name": "Neruthes",
+                "uri": "https://neruthes.xyz/"
+            },
+            {
+                "i": 7,
+                "f": "jpg",
+                "t": "Ribbons Dark 8",
+                "l": "CC-BY-NC-ND-4.0",
+                "tags": [
+                    "Abstract"
+                ],
+                "uname": "neruthes",
+                "name": "Neruthes",
+                "uri": "https://neruthes.xyz/"
+            },
+            {
+                "i": 8,
+                "f": "jpg",
+                "t": "Ribbons Light 8",
                 "l": "CC-BY-NC-ND-4.0",
                 "tags": [
                     "Abstract"

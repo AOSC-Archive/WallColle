@@ -50,7 +50,21 @@
         {
             "i": 6,
             "f": "jpg",
-            "t": "Weave",
+            "t": "Weave 8",
+            "l": "CC-BY-NC-ND-4.0",
+            "tags": [ "Abstract" ]
+        },
+        {
+            "i": 7,
+            "f": "jpg",
+            "t": "Ribbons Dark 8",
+            "l": "CC-BY-NC-ND-4.0",
+            "tags": [ "Abstract" ]
+        },
+        {
+            "i": 8,
+            "f": "jpg",
+            "t": "Ribbons Light 8",
             "l": "CC-BY-NC-ND-4.0",
             "tags": [ "Abstract" ]
         }
