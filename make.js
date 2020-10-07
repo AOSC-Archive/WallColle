@@ -232,7 +232,7 @@ const finisherScript = function (manifestObj) {
             '2048x1536', '2048x2048', '2160x1440', '2520x1080', '3360x1440', '2560x2048', '2560x1600',
             '2880x1800', '3000x2000', '3840x2160', '4096x4096', '4500x3000', '5120x4096', '800x600'
         ].forEach(function (x) {
-            fs.symlinkSync(abspathXml, `${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images/${x}.${img.f}`);
+            fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images/${x}.${img.f}`);
         });
         console.log(`OK.\n`);
     });
