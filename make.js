@@ -178,7 +178,7 @@ const finisherScript = function (manifestObj) {
     // console.log(manifestObj);
     manifestObj.entries.forEach(function (img) {
         // console.log(img);
-        let stdname = `${img.t.toLowerCase().replace(/ /g, '_')}.${img.uname}`;
+        let stdname = `${PACKNAME}.${img.t.toLowerCase().replace(/ /g, '_')}.${img.uname}`;
         let srcimgpath = `./contributors/${img.uname}/${img.i}.${img.f}`;
         // console.log(stdname);
         // console.log(srcimgpath);
