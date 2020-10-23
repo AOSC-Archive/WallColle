@@ -207,7 +207,7 @@ const finisherScript = function (manifestObj) {
             } finally {
 
             }
-            exec(`magick ${srcimgpathold} -resize x1200 -quality 80 ${srcimgpath}`);
+            exec(`convert ${srcimgpathold} -resize x1200 -quality 80 ${srcimgpath}`);
             exec(`pngquant 256 ${srcimgpath} -o ${srcimgpath}.optimized`);
             // exec(`rm -r /tmp/WallColle_${UUID}`);
         };
