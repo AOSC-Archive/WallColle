@@ -207,7 +207,8 @@ const finisherScript = function (manifestObj) {
             };
             exec(`convert ${srcimgpathold} -resize x1200 -quality 80 ${srcimgpath}`);
             exec(`pngquant 256 ${srcimgpath} -o ${srcimgpath}.optimized`);
-            exec(`rm -r /tmp/WallColle_${UUID}`);
+            srcimgpath = srcimgpath + '.optimized'
+            // exec(`rm -r /tmp/WallColle_${UUID}`);
             img.f = 'png';
         };
 
