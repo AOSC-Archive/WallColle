@@ -11,8 +11,16 @@ const exec = require('child_process').execSync;
 
 // --------------------------------------
 // Arguments initialization
+const UUID = 'ea9510656e3a43d8b037dd34490ad52f';
 const PACKNAME = process.argv[2];
-const DESTDIR = process.argv[3] || '.';
+const DESTDIR = process.argv[3];
+const VARIANT = process.argv[4]; // Destination variant, can be NORMAL or RETRO
+
+if (process.argv.length < 4) {
+    console.error('Insufficient arguments.');
+    console.error('Usage:    node make.js PACKNAME DESTDIR VARIANT');
+    process.exit(1);
+};
 
 // --------------------------------------
 // Begin function def
@@ -187,6 +195,22 @@ const finisherScript = function (manifestObj) {
         let abspathXml = `/usr/share/background-properties/${stdname}.xml`;
         let mockpathXml = `${DESTDIR}/usr/share/background-properties/${stdname}.xml`;
         let mockpathMds = `${DESTDIR}/usr/share/wallpapers/${stdname}/metadata.desktop`;
+
+        // For Retro
+        if (VARIANT === 'RETRO') {
+            let srcimgpathold = srcimgpath;
+            srcimgpath = `/tmp/WallColle_${UUID}/image---${img.uname}---${img.i}.png`;
+            try {
+                exec(`mkdir /tmp/WallColle_${UUID}`);
+            } catch (e) {
+
+            } finally {
+
+            }
+            exec(`magick ${srcimgpathold} -resize x1200 -quality 80 ${srcimgpath}`);
+            exec(`pngquant 256 ${srcimgpath} -o ${srcimgpath}.optimized`);
+            // exec(`rm -r /tmp/WallColle_${UUID}`);
+        };
 
         // Create directories
         exec(`mkdir -p ${DESTDIR}/usr/share/backgrounds/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname}/contents ${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images`);

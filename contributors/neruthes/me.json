@@ -75,6 +75,14 @@
             "l": "CC-BY-NC-ND-4.0",
             "tags": [ "Nature", "Plant" ],
             "src": "https://neruthes.xyz/album/?p=2"
+        },
+        {
+            "i": 10,
+            "f": "jpg",
+            "t": "Mini White",
+            "l": "CC-BY-NC-ND-4.0",
+            "tags": [ "Nature", "Plant" ],
+            "src": "https://neruthes.xyz/album/?p=1"
         }
     ]
 }
