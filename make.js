@@ -199,7 +199,7 @@ const finisherScript = function (manifestObj) {
         // For RETRO
         if (VARIANT.toUpperCase() === 'RETRO') {
             let allResolutions = [
-                '640x480', '800x600', '1400x1050', '1600x1200'
+                '640x480', '800x600', '1400x1050', '1600x1200', '1920x1200'
             ];
             try {
                 exec(`mkdir -p /tmp/WallColle_${UUID}`);
