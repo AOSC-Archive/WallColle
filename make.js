@@ -191,74 +191,131 @@ const finisherScript = function (manifestObj) {
         // console.log(stdname);
         // console.log(srcimgpath);
         let abspathImg = `/usr/share/backgrounds/${stdname}/${stdname}.${img.f}`;
-        let mockpathImg = `${DESTDIR}/usr/share/backgrounds/${stdname}/${stdname}.${img.f}`;
+        let mockpathImg = `${DESTDIR}/${abspathImg}`;
         let abspathXml = `/usr/share/background-properties/${stdname}.xml`;
         let mockpathXml = `${DESTDIR}/usr/share/background-properties/${stdname}.xml`;
         let mockpathMds = `${DESTDIR}/usr/share/wallpapers/${stdname}/metadata.desktop`;
 
-        // For Retro
-        if (VARIANT === 'RETRO') {
-            let srcimgpathold = srcimgpath;
-            srcimgpath = `/tmp/WallColle_${UUID}/image---${img.uname}---${img.i}.png`;
+        // For RETRO
+        if (VARIANT.toUpperCase() === 'RETRO') {
+            let allResolutions = [
+                '1024x768', '1152x768', '1280x1024', '1280x800', '1280x854', '1280x960', '1366x768',
+                '1440x900', '1440x960', '1600x1200', '1600x900', '1680x1050', '1920x1080', '1920x1200'
+            ];
+            // let srcimgpathold = srcimgpath;
+            // srcimgpath = `/tmp/WallColle_${UUID}/image---${img.uname}---${img.i}.png`;
             try {
                 exec(`mkdir -p /tmp/WallColle_${UUID}`);
             } catch (e) {
             } finally {
             };
-            exec(`convert ${srcimgpathold} -resize x1200 -quality 80 ${srcimgpath}`);
-            exec(`pngquant 256 ${srcimgpath} -o ${srcimgpath}.optimized`);
-            srcimgpath = srcimgpath + '.optimized'
-            // exec(`rm -r /tmp/WallColle_${UUID}`);
-            img.f = 'png';
+            // exec(`convert ${srcimgpathold} -resize x1200 -quality 80 ${srcimgpath}`);
+            // exec(`pngquant 256 ${srcimgpath} -o ${srcimgpath}.optimized`);
+            // srcimgpath = srcimgpath + '.optimized'
+            // img.f = 'png';
+
+            // Create directories
+            exec(`mkdir -p ${DESTDIR}/usr/share/backgrounds/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname}/contents ${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images`);
+
+            // Put files
+            console.log(`Copying image: ${srcimgpath}`);
+            // fs.copyFileSync(srcimgpath, mockpathImg);
+
+            // Write config
+            console.log(`Writing XML: ${mockpathXml}`);
+            fs.writeFileSync(mockpathXml, `<?xml version='1.0' encoding='UTF-8'?>
+            <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+            <wallpapers>
+                <wallpaper delete="false">
+                    <name>Campanula</name>
+                    <filename>${abspathXml}</filename>
+                    <artist>${img.name} &lt;${img.email}&gt;</artist>
+                    <options>zoom</options>
+                </wallpaper>
+            </wallpapers>`);
+            console.log(`Writing metadata.desktop: ${mockpathMds}`);
+            fs.writeFileSync(mockpathMds, `
+                [Desktop Entry]
+                Name=${img.t}
+
+                X-KDE-PluginInfo-Name=${img.t}
+                X-KDE-PluginInfo-Author=${img.name}
+                X-KDE-PluginInfo-Email=${img.email}
+                X-KDE-PluginInfo-License=${img.l}
+            `.trim().replace(/\n\s+/g, '\n'));
+
+            // Symlinks
+            console.log(`Creating symlinks for image "${stdname}"`);
+            fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/wallpapers/${stdname}/screenshot.${img.f}`);
+            [ '1-1', '16-10', '16-9', '21-9', '3-2', '4-3', '5-4' ].map(function (x) {
+                fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/backgrounds/xfce/${stdname}-${x}.${img.f}`);
+            });
+            fs.symlinkSync(abspathXml, `${DESTDIR}/usr/share/gnome-background-properties/${stdname}.xml`);
+            fs.symlinkSync(abspathXml, `${DESTDIR}/usr/share/mate-background-properties/${stdname}.xml`);
+
+            allResolutions.forEach(function (scrsize) {
+                let imgSpecificPath = `${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images/${scrsize}.png`;
+                console.log(`Generating ${stdname} for ${scrsize}`);
+                exec(`convert ${srcimgpath} -resize ${scrsize}^ -gravity center -crop ${scrsize}+0+0 -quality 80 ${imgSpecificPath}`);
+                exec(`mv ${imgSpecificPath} ${imgSpecificPath}.p`);
+                exec(`pngquant 256 ${imgSpecificPath}.p -o ${imgSpecificPath}`);
+                exec(`rm ${imgSpecificPath}.p`);
+            });
+            console.log(`OK.\n`);
+        } else { // For NORMAL
+            let allResolutions = [
+                '1024x768', '1152x768', '1280x1024', '1280x800', '1280x854', '1280x960', '1366x768',
+                '1440x900', '1440x960', '1600x1200', '1600x900', '1680x1050', '1920x1080', '1920x1200',
+                '2048x1536', '2048x2048', '2160x1440', '2520x1080', '3360x1440', '2560x2048', '2560x1600',
+                '2880x1800', '3000x2000', '3840x2160', '4096x4096', '4500x3000', '5120x4096', '800x600'
+            ];
+
+            // Create directories
+            exec(`mkdir -p ${DESTDIR}/usr/share/backgrounds/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname}/contents ${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images`);
+
+            // Put files
+            console.log(`Copying image: ${srcimgpath}`);
+            fs.copyFileSync(srcimgpath, mockpathImg);
+
+            // Write config
+            console.log(`Writing XML: ${mockpathXml}`);
+            fs.writeFileSync(mockpathXml, `<?xml version='1.0' encoding='UTF-8'?>
+            <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+            <wallpapers>
+                <wallpaper delete="false">
+                    <name>Campanula</name>
+                    <filename>${abspathXml}</filename>
+                    <artist>${img.name} &lt;${img.email}&gt;</artist>
+                    <options>zoom</options>
+                </wallpaper>
+            </wallpapers>`);
+            console.log(`Writing metadata.desktop: ${mockpathMds}`);
+            fs.writeFileSync(mockpathMds, `
+                [Desktop Entry]
+                Name=${img.t}
+
+                X-KDE-PluginInfo-Name=${img.t}
+                X-KDE-PluginInfo-Author=${img.name}
+                X-KDE-PluginInfo-Email=${img.email}
+                X-KDE-PluginInfo-License=${img.l}
+            `.trim().replace(/\n\s+/g, '\n'));
+
+            // Symlinks
+            console.log(`Creating symlinks for image "${stdname}"`);
+            fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/wallpapers/${stdname}/screenshot.${img.f}`);
+            [ '1-1', '16-10', '16-9', '21-9', '3-2', '4-3', '5-4' ].map(function (x) {
+                fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/backgrounds/xfce/${stdname}-${x}.${img.f}`);
+            });
+            fs.symlinkSync(abspathXml, `${DESTDIR}/usr/share/gnome-background-properties/${stdname}.xml`);
+            fs.symlinkSync(abspathXml, `${DESTDIR}/usr/share/mate-background-properties/${stdname}.xml`);
+
+            allResolutions.forEach(function (scrsize) {
+                fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images/${scrsize}.${img.f}`);
+            });
+            console.log(`OK.\n`);
         };
 
-        // Create directories
-        exec(`mkdir -p ${DESTDIR}/usr/share/backgrounds/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname}/contents ${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images`);
 
-        // Put files
-        console.log(`Copying image: ${srcimgpath}`);
-        fs.copyFileSync(srcimgpath, mockpathImg);
-
-        // Write config
-        console.log(`Writing XML: ${mockpathXml}`);
-        fs.writeFileSync(mockpathXml, `<?xml version='1.0' encoding='UTF-8'?>
-        <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
-        <wallpapers>
-            <wallpaper delete="false">
-                <name>Campanula</name>
-                <filename>${abspathXml}</filename>
-                <artist>${img.name} &lt;${img.email}&gt;</artist>
-                <options>zoom</options>
-            </wallpaper>
-        </wallpapers>`);
-        console.log(`Writing metadata.desktop: ${mockpathMds}`);
-        fs.writeFileSync(mockpathMds, `
-            [Desktop Entry]
-            Name=${img.t}
-
-            X-KDE-PluginInfo-Name=${img.t}
-            X-KDE-PluginInfo-Author=${img.name}
-            X-KDE-PluginInfo-Email=${img.email}
-            X-KDE-PluginInfo-License=${img.l}
-        `.trim().replace(/\n\s+/g, '\n'));
-
-        // Symlinks
-        console.log(`Creating symlinks for image "${stdname}"`);
-        fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/wallpapers/${stdname}/screenshot.${img.f}`);
-        [ '1-1', '16-10', '16-9', '21-9', '3-2', '4-3', '5-4' ].map(function (x) {
-            fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/backgrounds/xfce/${stdname}-${x}.${img.f}`);
-        });
-        fs.symlinkSync(abspathXml, `${DESTDIR}/usr/share/gnome-background-properties/${stdname}.xml`);
-        fs.symlinkSync(abspathXml, `${DESTDIR}/usr/share/mate-background-properties/${stdname}.xml`);
-        [
-            '1024x768', '1152x768', '1280x1024', '1280x800', '1280x854', '1280x960', '1366x768',
-            '1440x900', '1440x960', '1600x1200', '1600x900', '1680x1050', '1920x1080', '1920x1200',
-            '2048x1536', '2048x2048', '2160x1440', '2520x1080', '3360x1440', '2560x2048', '2560x1600',
-            '2880x1800', '3000x2000', '3840x2160', '4096x4096', '4500x3000', '5120x4096', '800x600'
-        ].forEach(function (x) {
-            fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images/${x}.${img.f}`);
-        });
-        console.log(`OK.\n`);
     });
 };
 
