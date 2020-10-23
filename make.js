@@ -199,20 +199,13 @@ const finisherScript = function (manifestObj) {
         // For RETRO
         if (VARIANT.toUpperCase() === 'RETRO') {
             let allResolutions = [
-                '1024x768', '1152x768', '1280x1024', '1280x800', '1280x854', '1280x960', '1366x768',
-                '1440x900', '1440x960', '1600x1200', '1600x900', '1680x1050', '1920x1080', '1920x1200'
+                '640x480', '800x600', '1400x1050', '1600x1200'
             ];
-            // let srcimgpathold = srcimgpath;
-            // srcimgpath = `/tmp/WallColle_${UUID}/image---${img.uname}---${img.i}.png`;
             try {
                 exec(`mkdir -p /tmp/WallColle_${UUID}`);
             } catch (e) {
             } finally {
             };
-            // exec(`convert ${srcimgpathold} -resize x1200 -quality 80 ${srcimgpath}`);
-            // exec(`pngquant 256 ${srcimgpath} -o ${srcimgpath}.optimized`);
-            // srcimgpath = srcimgpath + '.optimized'
-            // img.f = 'png';
 
             // Create directories
             exec(`mkdir -p ${DESTDIR}/usr/share/backgrounds/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname} ${DESTDIR}/usr/share/wallpapers/${stdname}/contents ${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images`);
@@ -246,7 +239,6 @@ const finisherScript = function (manifestObj) {
 
             // Symlinks
             console.log(`Creating symlinks for image "${stdname}"`);
-            fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/wallpapers/${stdname}/screenshot.${img.f}`);
             [ '1-1', '16-10', '16-9', '21-9', '3-2', '4-3', '5-4' ].map(function (x) {
                 fs.symlinkSync(abspathImg, `${DESTDIR}/usr/share/backgrounds/xfce/${stdname}-${x}.${img.f}`);
             });
@@ -260,6 +252,9 @@ const finisherScript = function (manifestObj) {
                 exec(`mv ${imgSpecificPath} ${imgSpecificPath}.p`);
                 exec(`pngquant 256 ${imgSpecificPath}.p -o ${imgSpecificPath}`);
                 exec(`rm ${imgSpecificPath}.p`);
+                if (scrsize === '800x600') {
+                    fs.symlinkSync(imgSpecificPath.replace(DESTDIR, ''), `${DESTDIR}/usr/share/wallpapers/${stdname}/screenshot.png`);
+                };
             });
             console.log(`OK.\n`);
         } else { // For NORMAL
