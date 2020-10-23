@@ -201,15 +201,13 @@ const finisherScript = function (manifestObj) {
             let srcimgpathold = srcimgpath;
             srcimgpath = `/tmp/WallColle_${UUID}/image---${img.uname}---${img.i}.png`;
             try {
-                exec(`mkdir /tmp/WallColle_${UUID}`);
+                exec(`mkdir -p /tmp/WallColle_${UUID}`);
             } catch (e) {
-
             } finally {
-
-            }
+            };
             exec(`convert ${srcimgpathold} -resize x1200 -quality 80 ${srcimgpath}`);
             exec(`pngquant 256 ${srcimgpath} -o ${srcimgpath}.optimized`);
-            // exec(`rm -r /tmp/WallColle_${UUID}`);
+            exec(`rm -r /tmp/WallColle_${UUID}`);
         };
 
         // Create directories
