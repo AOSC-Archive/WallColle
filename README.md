@@ -123,12 +123,26 @@ Empty lines are ignored. Comment lines start with `# `.
 After configuring a pack definition at `/packs/packname`, run:
 
 ```
-$ node make.js packname
+$ node make.js packname . NORMAL
 ```
 
 Then the corresponding images will be copied to `/dist`, with a generated text description file `/dist/manifest.txt`, which includes some information of the pack and the included wallpapers (title, contributor, license).
 
 Therefore you can "really" pack them with your favorite packing toolchain, zip or tar or whatever.
+
+When building a pack with Ciel, write:
+
+```
+node make.js packname $PKGDIR NORMAL
+```
+
+If building for Retro, change "NORMAL" to "RETRO".
+
+Before building another pack, you may run:
+
+```
+bash clean.sh
+```
 
 ## Contribute Code
 
