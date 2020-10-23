@@ -199,7 +199,7 @@ const finisherScript = function (manifestObj) {
         // For RETRO
         if (VARIANT.toUpperCase() === 'RETRO') {
             let allResolutions = [
-                '640x480', '800x600', '1400x1050', '1600x1200', '1920x1200'
+                '800x600', '1280x960', '1600x1200', '1920x1200'
             ];
             try {
                 exec(`mkdir -p /tmp/WallColle_${UUID}`);
@@ -248,11 +248,11 @@ const finisherScript = function (manifestObj) {
             allResolutions.forEach(function (scrsize) {
                 let imgSpecificPath = `${DESTDIR}/usr/share/wallpapers/${stdname}/contents/images/${scrsize}.png`;
                 console.log(`Generating ${stdname} for ${scrsize}`);
-                exec(`convert ${srcimgpath} -resize ${scrsize}^ -gravity center -crop ${scrsize}+0+0 -quality 80 ${imgSpecificPath}`);
+                exec(`convert ${srcimgpath} -resize ${scrsize} -gravity center -quality 80 ${imgSpecificPath}`);
                 exec(`mv ${imgSpecificPath} ${imgSpecificPath}.p`);
                 exec(`pngquant 256 ${imgSpecificPath}.p -o ${imgSpecificPath}`);
                 exec(`rm ${imgSpecificPath}.p`);
-                if (scrsize === '800x600') {
+                if (scrsize === '1280x960') {
                     fs.symlinkSync(imgSpecificPath.replace(DESTDIR, ''), `${DESTDIR}/usr/share/wallpapers/${stdname}/screenshot.png`);
                 };
             });
