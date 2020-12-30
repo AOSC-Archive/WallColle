@@ -1,0 +1,22 @@
+{
+    "uname": "osnine",
+    "name": "",
+    "email": "",
+    "uri": "",
+    "wallpapers": [
+        {
+            "i": 0,
+            "f": "png",
+            "t": "Untitled Window Pic",
+            "l": "TBD",
+            "tags": [ "Nature", "Plant" ]
+        },
+        {
+            "i": 1,
+            "f": "png",
+            "t": "Willow Curtain",
+            "l": "TBD",
+            "tags": [ "Nature", "Plant" ]
+        }
+    ]
+}

@@ -1,0 +1,71 @@
+{
+    "uname": "megabitsenmzq",
+    "name": "",
+    "email": "",
+    "uri": "",
+    "wallpapers": [
+        {
+            "i": 0,
+            "f": "png",
+            "t": "As Oceans As Skies",
+            "l": "TBD",
+            "tags": [ "Nature", "Water" ]
+        },
+        {
+            "i": 1,
+            "f": "png",
+            "t": "Concrete Forest",
+            "l": "TBD",
+            "tags": [ "Civil", "Metropolis" ]
+        },
+        {
+            "i": 2,
+            "f": "png",
+            "t": "Grand Canyon - 1",
+            "l": "TBD",
+            "tags": [ "Nature", "Mountain" ]
+        },
+        {
+            "i": 3,
+            "f": "png",
+            "t": "Grand Canyon - 2",
+            "l": "TBD",
+            "tags": [ "Nature", "Mountain" ]
+        },
+        {
+            "i": 4,
+            "f": "png",
+            "t": "Grand Canyon - 3",
+            "l": "TBD",
+            "tags": [ "Nature", "Mountain" ]
+        },
+        {
+            "i": 5,
+            "f": "png",
+            "t": "La Jolla Beach",
+            "l": "TBD",
+            "tags": [ "Nature", "Water" ]
+        },
+        {
+            "i": 6,
+            "f": "png",
+            "t": "Mountain Range",
+            "l": "TBD",
+            "tags": [ "Nature", "Mountain" ]
+        },
+        {
+            "i": 7,
+            "f": "png",
+            "t": "Night River",
+            "l": "TBD",
+            "tags": [ "Civil", "Metropolis" ]
+        },
+        {
+            "i": 8,
+            "f": "png",
+            "t": "The Plough",
+            "l": "TBD",
+            "tags": [ "Nature", "Astronomy" ]
+        }
+    ]
+}

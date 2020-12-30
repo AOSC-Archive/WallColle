@@ -206,6 +206,7 @@ This is the tree of tags.
   - Oasis
   - Plant
   - Water
+  - Astronomy
 - Retro
 
 ## Appendix 2: Acceptable Licenses

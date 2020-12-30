@@ -1,0 +1,36 @@
+{
+    "uname": "osnine",
+    "name": "",
+    "email": "",
+    "uri": "",
+    "wallpapers": [
+        {
+            "i": 0,
+            "f": "jpg",
+            "t": "Radio - 1",
+            "l": "TBD",
+            "tags": [ "Civil", "Metropolis" ]
+        },
+        {
+            "i": 1,
+            "f": "jpg",
+            "t": "Radio - 2",
+            "l": "TBD",
+            "tags": [ "Civil", "Metropolis" ]
+        },
+        {
+            "i": 2,
+            "f": "jpg",
+            "t": "Radio - 3",
+            "l": "TBD",
+            "tags": [ "Civil", "Metropolis" ]
+        },
+        {
+            "i": 3,
+            "f": "jpg",
+            "t": "Radio - 4",
+            "l": "TBD",
+            "tags": [ "Civil", "Metropolis" ]
+        }
+    ]
+}
