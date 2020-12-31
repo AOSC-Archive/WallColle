@@ -1,56 +1,56 @@
 {
     "uname": "cth451",
-    "name": "Chai Tianhao",
-    "email": "",
+    "name": "cth451",
+    "email": "cth451@gmail.com",
     "uri": "",
     "wallpapers": [
         {
             "i": 0,
             "f": "jpg",
             "t": "Harmony Traffic Light",
-            "l": "TBD",
+            "l": "CC BY-NC 4.0",
             "tags": [ "Civil", "Metropolis" ]
         },
         {
             "i": 1,
             "f": "jpg",
             "t": "Lanterns",
-            "l": "TBD",
+            "l": "CC BY-NC 4.0",
             "tags": [ "Civil", "Metropolis" ]
         },
         {
             "i": 2,
             "f": "jpg",
             "t": "Mt. Oberlin",
-            "l": "TBD",
+            "l": "CC BY-NC 4.0",
             "tags": [ "Nature", "Mountain" ]
         },
         {
             "i": 3,
             "f": "jpg",
             "t": "St. Mary Lake",
-            "l": "TBD",
+            "l": "CC BY-NC 4.0",
             "tags": [ "Nature", "Water" ]
         },
         {
             "i": 4,
             "f": "jpg",
             "t": "The Gardiner",
-            "l": "TBD",
+            "l": "CC BY-NC 4.0",
             "tags": [ "Civil", "Metropolis" ]
         },
         {
             "i": 5,
             "f": "jpg",
             "t": "Traffic Lights",
-            "l": "TBD",
+            "l": "CC BY-NC 4.0",
             "tags": [ "Civil", "Metropolis" ]
         },
         {
             "i": 6,
             "f": "jpg",
             "t": "Union",
-            "l": "TBD",
+            "l": "CC BY-NC 4.0",
             "tags": [ "Civil", "Metropolis" ]
         }
     ]

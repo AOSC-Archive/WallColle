@@ -16,7 +16,7 @@ const PACKNAME = process.argv[2];
 const DESTDIR = process.argv[3];
 const VARIANT = process.argv[4]; // Destination variant, can be NORMAL or RETRO
 
-if (process.argv.length < 4) {
+if (process.argv.length < 5) {
     console.error('Insufficient arguments.');
     console.error('Usage:    node make.js PACKNAME DESTDIR VARIANT');
     process.exit(1);
