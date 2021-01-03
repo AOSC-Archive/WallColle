@@ -1,6 +1,6 @@
 {
     "uname": "neo_chen",
-    "name": "Neo Chen",
+    "name": "Neo_Chen",
     "email": "",
     "uri": "",
     "wallpapers": [
@@ -8,28 +8,28 @@
             "i": 0,
             "f": "jpg",
             "t": "Radio - 1",
-            "l": "TBD",
+            "l": "WTFPL",
             "tags": [ "Civil", "Metropolis" ]
         },
         {
             "i": 1,
             "f": "jpg",
             "t": "Radio - 2",
-            "l": "TBD",
+            "l": "WTFPL",
             "tags": [ "Civil", "Metropolis" ]
         },
         {
             "i": 2,
             "f": "jpg",
             "t": "Radio - 3",
-            "l": "TBD",
+            "l": "WTFPL",
             "tags": [ "Civil", "Metropolis" ]
         },
         {
             "i": 3,
             "f": "jpg",
             "t": "Radio - 4",
-            "l": "TBD",
+            "l": "WTFPL",
             "tags": [ "Civil", "Metropolis" ]
         }
     ]
