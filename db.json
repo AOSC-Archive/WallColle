@@ -16,6 +16,7 @@
                 ],
                 "uname": "cth451",
                 "name": "cth451",
+                "email": "cth451@gmail.com",
                 "uri": ""
             },
             {
@@ -29,6 +30,7 @@
                 ],
                 "uname": "cth451",
                 "name": "cth451",
+                "email": "cth451@gmail.com",
                 "uri": ""
             },
             {
@@ -42,6 +44,7 @@
                 ],
                 "uname": "cth451",
                 "name": "cth451",
+                "email": "cth451@gmail.com",
                 "uri": ""
             },
             {
@@ -55,6 +58,7 @@
                 ],
                 "uname": "cth451",
                 "name": "cth451",
+                "email": "cth451@gmail.com",
                 "uri": ""
             },
             {
@@ -68,6 +72,7 @@
                 ],
                 "uname": "cth451",
                 "name": "cth451",
+                "email": "cth451@gmail.com",
                 "uri": ""
             },
             {
@@ -81,6 +86,7 @@
                 ],
                 "uname": "cth451",
                 "name": "cth451",
+                "email": "cth451@gmail.com",
                 "uri": ""
             },
             {
@@ -94,131 +100,141 @@
                 ],
                 "uname": "cth451",
                 "name": "cth451",
+                "email": "cth451@gmail.com",
                 "uri": ""
             }
         ]
     },
     "llemonade": {
         "uname": "llemonade",
-        "name": "LLemonade",
-        "email": "",
+        "name": "Zhimin Lin",
+        "email": "linzm.gz@outlook.com",
         "uri": "",
         "wallpapers": [
             {
                 "i": 0,
                 "f": "jpg",
                 "t": "As Oceans As Skies",
-                "l": "TBD",
+                "l": "CC BY-NC 4.0",
                 "tags": [
                     "Nature",
                     "Water"
                 ],
                 "uname": "llemonade",
-                "name": "LLemonade",
+                "name": "Zhimin Lin",
+                "email": "linzm.gz@outlook.com",
                 "uri": ""
             },
             {
                 "i": 1,
                 "f": "jpg",
                 "t": "Concrete Forest",
-                "l": "TBD",
+                "l": "CC BY-NC 4.0",
                 "tags": [
                     "Civil",
                     "Metropolis"
                 ],
                 "uname": "llemonade",
-                "name": "LLemonade",
+                "name": "Zhimin Lin",
+                "email": "linzm.gz@outlook.com",
                 "uri": ""
             },
             {
                 "i": 2,
                 "f": "jpg",
                 "t": "Grand Canyon - 1",
-                "l": "TBD",
+                "l": "CC BY-NC 4.0",
                 "tags": [
                     "Nature",
                     "Mountain"
                 ],
                 "uname": "llemonade",
-                "name": "LLemonade",
+                "name": "Zhimin Lin",
+                "email": "linzm.gz@outlook.com",
                 "uri": ""
             },
             {
                 "i": 3,
                 "f": "jpg",
                 "t": "Grand Canyon - 2",
-                "l": "TBD",
+                "l": "CC BY-NC 4.0",
                 "tags": [
                     "Nature",
                     "Mountain"
                 ],
                 "uname": "llemonade",
-                "name": "LLemonade",
+                "name": "Zhimin Lin",
+                "email": "linzm.gz@outlook.com",
                 "uri": ""
             },
             {
                 "i": 4,
                 "f": "jpg",
                 "t": "Grand Canyon - 3",
-                "l": "TBD",
+                "l": "CC BY-NC 4.0",
                 "tags": [
                     "Nature",
                     "Mountain"
                 ],
                 "uname": "llemonade",
-                "name": "LLemonade",
+                "name": "Zhimin Lin",
+                "email": "linzm.gz@outlook.com",
                 "uri": ""
             },
             {
                 "i": 5,
                 "f": "jpg",
                 "t": "La Jolla Beach",
-                "l": "TBD",
+                "l": "CC BY-NC 4.0",
                 "tags": [
                     "Nature",
                     "Water"
                 ],
                 "uname": "llemonade",
-                "name": "LLemonade",
+                "name": "Zhimin Lin",
+                "email": "linzm.gz@outlook.com",
                 "uri": ""
             },
             {
                 "i": 6,
                 "f": "jpg",
                 "t": "Mountain Range",
-                "l": "TBD",
+                "l": "CC BY-NC 4.0",
                 "tags": [
                     "Nature",
                     "Mountain"
                 ],
                 "uname": "llemonade",
-                "name": "LLemonade",
+                "name": "Zhimin Lin",
+                "email": "linzm.gz@outlook.com",
                 "uri": ""
             },
             {
                 "i": 7,
                 "f": "jpg",
                 "t": "Night River",
-                "l": "TBD",
+                "l": "CC BY-NC 4.0",
                 "tags": [
                     "Civil",
                     "Metropolis"
                 ],
                 "uname": "llemonade",
-                "name": "LLemonade",
+                "name": "Zhimin Lin",
+                "email": "linzm.gz@outlook.com",
                 "uri": ""
             },
             {
                 "i": 8,
                 "f": "jpg",
                 "t": "The Plough",
-                "l": "TBD",
+                "l": "CC BY-NC 4.0",
                 "tags": [
                     "Nature",
                     "Astronomy"
                 ],
                 "uname": "llemonade",
-                "name": "LLemonade",
+                "name": "Zhimin Lin",
+                "email": "linzm.gz@outlook.com",
                 "uri": ""
             }
         ]
@@ -226,72 +242,77 @@
     "megabitsenmzq": {
         "uname": "megabitsenmzq",
         "name": "Megabits",
-        "email": "",
+        "email": "megabitsenmzq@gmail.com",
         "uri": "",
         "wallpapers": [
             {
                 "i": 0,
                 "f": "jpg",
                 "t": "Arakawa River",
-                "l": "TBD",
+                "l": "CC BY",
                 "tags": [
                     "Civil",
                     "Metropolis"
                 ],
                 "uname": "megabitsenmzq",
                 "name": "Megabits",
+                "email": "megabitsenmzq@gmail.com",
                 "uri": ""
             },
             {
                 "i": 1,
                 "f": "jpg",
                 "t": "Flowers",
-                "l": "TBD",
+                "l": "CC BY",
                 "tags": [
                     "Nature",
                     "Plant"
                 ],
                 "uname": "megabitsenmzq",
                 "name": "Megabits",
+                "email": "megabitsenmzq@gmail.com",
                 "uri": ""
             },
             {
                 "i": 2,
                 "f": "jpg",
                 "t": "Roof",
-                "l": "TBD",
+                "l": "CC BY",
                 "tags": [
                     "Civil",
                     "Metropolis"
                 ],
                 "uname": "megabitsenmzq",
                 "name": "Megabits",
+                "email": "megabitsenmzq@gmail.com",
                 "uri": ""
             },
             {
                 "i": 3,
                 "f": "jpg",
                 "t": "Okutama Lake",
-                "l": "TBD",
+                "l": "CC BY",
                 "tags": [
                     "Nature",
                     "Water"
                 ],
                 "uname": "megabitsenmzq",
                 "name": "Megabits",
+                "email": "megabitsenmzq@gmail.com",
                 "uri": ""
             },
             {
                 "i": 4,
                 "f": "jpg",
                 "t": "Leaves",
-                "l": "TBD",
+                "l": "CC BY",
                 "tags": [
                     "Nature",
                     "Plant"
                 ],
                 "uname": "megabitsenmzq",
                 "name": "Megabits",
+                "email": "megabitsenmzq@gmail.com",
                 "uri": ""
             }
         ]
@@ -299,7 +320,7 @@
     "neo_chen": {
         "uname": "neo_chen",
         "name": "Neo_Chen",
-        "email": "",
+        "email": "chenkolei@gmail.com",
         "uri": "",
         "wallpapers": [
             {
@@ -313,6 +334,7 @@
                 ],
                 "uname": "neo_chen",
                 "name": "Neo_Chen",
+                "email": "chenkolei@gmail.com",
                 "uri": ""
             },
             {
@@ -326,6 +348,7 @@
                 ],
                 "uname": "neo_chen",
                 "name": "Neo_Chen",
+                "email": "chenkolei@gmail.com",
                 "uri": ""
             },
             {
@@ -339,6 +362,7 @@
                 ],
                 "uname": "neo_chen",
                 "name": "Neo_Chen",
+                "email": "chenkolei@gmail.com",
                 "uri": ""
             },
             {
@@ -352,6 +376,7 @@
                 ],
                 "uname": "neo_chen",
                 "name": "Neo_Chen",
+                "email": "chenkolei@gmail.com",
                 "uri": ""
             }
         ]
@@ -374,6 +399,7 @@
                 ],
                 "uname": "neruthes",
                 "name": "Neruthes",
+                "email": "i@neruthes.xyz",
                 "uri": "https://neruthes.xyz/"
             },
             {
@@ -388,6 +414,7 @@
                 ],
                 "uname": "neruthes",
                 "name": "Neruthes",
+                "email": "i@neruthes.xyz",
                 "uri": "https://neruthes.xyz/"
             },
             {
@@ -402,6 +429,7 @@
                 ],
                 "uname": "neruthes",
                 "name": "Neruthes",
+                "email": "i@neruthes.xyz",
                 "uri": "https://neruthes.xyz/"
             },
             {
@@ -416,6 +444,7 @@
                 ],
                 "uname": "neruthes",
                 "name": "Neruthes",
+                "email": "i@neruthes.xyz",
                 "uri": "https://neruthes.xyz/"
             },
             {
@@ -430,6 +459,7 @@
                 "src": "https://t.me/neruthesartworkdrafts/57",
                 "uname": "neruthes",
                 "name": "Neruthes",
+                "email": "i@neruthes.xyz",
                 "uri": "https://neruthes.xyz/"
             },
             {
@@ -442,6 +472,7 @@
                 ],
                 "uname": "neruthes",
                 "name": "Neruthes",
+                "email": "i@neruthes.xyz",
                 "uri": "https://neruthes.xyz/"
             },
             {
@@ -454,6 +485,7 @@
                 ],
                 "uname": "neruthes",
                 "name": "Neruthes",
+                "email": "i@neruthes.xyz",
                 "uri": "https://neruthes.xyz/"
             },
             {
@@ -466,6 +498,7 @@
                 ],
                 "uname": "neruthes",
                 "name": "Neruthes",
+                "email": "i@neruthes.xyz",
                 "uri": "https://neruthes.xyz/"
             },
             {
@@ -478,6 +511,7 @@
                 ],
                 "uname": "neruthes",
                 "name": "Neruthes",
+                "email": "i@neruthes.xyz",
                 "uri": "https://neruthes.xyz/"
             },
             {
@@ -492,6 +526,7 @@
                 "src": "https://neruthes.xyz/album/?p=2",
                 "uname": "neruthes",
                 "name": "Neruthes",
+                "email": "i@neruthes.xyz",
                 "uri": "https://neruthes.xyz/"
             },
             {
@@ -506,13 +541,14 @@
                 "src": "https://neruthes.xyz/album/?p=1",
                 "uname": "neruthes",
                 "name": "Neruthes",
+                "email": "i@neruthes.xyz",
                 "uri": "https://neruthes.xyz/"
             }
         ]
     },
     "osnine": {
         "uname": "osnine",
-        "name": "OSNine",
+        "name": "Zixu",
         "email": "",
         "uri": "",
         "wallpapers": [
@@ -520,26 +556,28 @@
                 "i": 0,
                 "f": "jpg",
                 "t": "Untitled Window Pic",
-                "l": "TBD",
+                "l": "CC BY-SA 4.0",
                 "tags": [
                     "Nature",
                     "Plant"
                 ],
                 "uname": "osnine",
-                "name": "OSNine",
+                "name": "Zixu",
+                "email": "",
                 "uri": ""
             },
             {
                 "i": 1,
                 "f": "jpg",
                 "t": "Willow Curtain",
-                "l": "TBD",
+                "l": "CC BY-SA 4.0",
                 "tags": [
                     "Nature",
                     "Plant"
                 ],
                 "uname": "osnine",
-                "name": "OSNine",
+                "name": "Zixu",
+                "email": "",
                 "uri": ""
             }
         ]
@@ -547,7 +585,7 @@
     "szc1sya": {
         "uname": "szc1sya",
         "name": "Leo Shen",
-        "email": "",
+        "email": "szclsya@aosc.io",
         "uri": "",
         "wallpapers": [
             {
@@ -561,6 +599,7 @@
                 ],
                 "uname": "szc1sya",
                 "name": "Leo Shen",
+                "email": "szclsya@aosc.io",
                 "uri": ""
             },
             {
@@ -574,6 +613,7 @@
                 ],
                 "uname": "szc1sya",
                 "name": "Leo Shen",
+                "email": "szclsya@aosc.io",
                 "uri": ""
             }
         ]

@@ -1,42 +1,42 @@
 {
     "uname": "megabitsenmzq",
     "name": "Megabits",
-    "email": "",
+    "email": "megabitsenmzq@gmail.com",
     "uri": "",
     "wallpapers": [
         {
             "i": 0,
             "f": "jpg",
             "t": "Arakawa River",
-            "l": "TBD",
+            "l": "CC BY",
             "tags": [ "Civil", "Metropolis" ]
         },
         {
             "i": 1,
             "f": "jpg",
             "t": "Flowers",
-            "l": "TBD",
+            "l": "CC BY",
             "tags": [ "Nature", "Plant" ]
         },
         {
             "i": 2,
             "f": "jpg",
             "t": "Roof",
-            "l": "TBD",
+            "l": "CC BY",
             "tags": [ "Civil", "Metropolis" ]
         },
         {
             "i": 3,
             "f": "jpg",
             "t": "Okutama Lake",
-            "l": "TBD",
+            "l": "CC BY",
             "tags": [ "Nature", "Water" ]
         },
         {
             "i": 4,
             "f": "jpg",
             "t": "Leaves",
-            "l": "TBD",
+            "l": "CC BY",
             "tags": [ "Nature", "Plant" ]
         }
     ]
