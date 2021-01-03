@@ -106,7 +106,7 @@
         "wallpapers": [
             {
                 "i": 0,
-                "f": "png",
+                "f": "jpg",
                 "t": "As Oceans As Skies",
                 "l": "TBD",
                 "tags": [
@@ -119,7 +119,7 @@
             },
             {
                 "i": 1,
-                "f": "png",
+                "f": "jpg",
                 "t": "Concrete Forest",
                 "l": "TBD",
                 "tags": [
@@ -132,7 +132,7 @@
             },
             {
                 "i": 2,
-                "f": "png",
+                "f": "jpg",
                 "t": "Grand Canyon - 1",
                 "l": "TBD",
                 "tags": [
@@ -145,7 +145,7 @@
             },
             {
                 "i": 3,
-                "f": "png",
+                "f": "jpg",
                 "t": "Grand Canyon - 2",
                 "l": "TBD",
                 "tags": [
@@ -158,7 +158,7 @@
             },
             {
                 "i": 4,
-                "f": "png",
+                "f": "jpg",
                 "t": "Grand Canyon - 3",
                 "l": "TBD",
                 "tags": [
@@ -171,7 +171,7 @@
             },
             {
                 "i": 5,
-                "f": "png",
+                "f": "jpg",
                 "t": "La Jolla Beach",
                 "l": "TBD",
                 "tags": [
@@ -184,7 +184,7 @@
             },
             {
                 "i": 6,
-                "f": "png",
+                "f": "jpg",
                 "t": "Mountain Range",
                 "l": "TBD",
                 "tags": [
@@ -197,7 +197,7 @@
             },
             {
                 "i": 7,
-                "f": "png",
+                "f": "jpg",
                 "t": "Night River",
                 "l": "TBD",
                 "tags": [
@@ -210,7 +210,7 @@
             },
             {
                 "i": 8,
-                "f": "png",
+                "f": "jpg",
                 "t": "The Plough",
                 "l": "TBD",
                 "tags": [
@@ -298,7 +298,7 @@
     },
     "neo_chen": {
         "uname": "neo_chen",
-        "name": "Neo Chen",
+        "name": "Neo_Chen",
         "email": "",
         "uri": "",
         "wallpapers": [
@@ -306,52 +306,52 @@
                 "i": 0,
                 "f": "jpg",
                 "t": "Radio - 1",
-                "l": "TBD",
+                "l": "WTFPL",
                 "tags": [
                     "Civil",
                     "Metropolis"
                 ],
                 "uname": "neo_chen",
-                "name": "Neo Chen",
+                "name": "Neo_Chen",
                 "uri": ""
             },
             {
                 "i": 1,
                 "f": "jpg",
                 "t": "Radio - 2",
-                "l": "TBD",
+                "l": "WTFPL",
                 "tags": [
                     "Civil",
                     "Metropolis"
                 ],
                 "uname": "neo_chen",
-                "name": "Neo Chen",
+                "name": "Neo_Chen",
                 "uri": ""
             },
             {
                 "i": 2,
                 "f": "jpg",
                 "t": "Radio - 3",
-                "l": "TBD",
+                "l": "WTFPL",
                 "tags": [
                     "Civil",
                     "Metropolis"
                 ],
                 "uname": "neo_chen",
-                "name": "Neo Chen",
+                "name": "Neo_Chen",
                 "uri": ""
             },
             {
                 "i": 3,
                 "f": "jpg",
                 "t": "Radio - 4",
-                "l": "TBD",
+                "l": "WTFPL",
                 "tags": [
                     "Civil",
                     "Metropolis"
                 ],
                 "uname": "neo_chen",
-                "name": "Neo Chen",
+                "name": "Neo_Chen",
                 "uri": ""
             }
         ]
@@ -366,7 +366,7 @@
                 "i": 0,
                 "f": "jpg",
                 "t": "Retro Jelly Danmaku",
-                "l": "CC-BY-ND-4.0",
+                "l": "CC BY-ND-4.0",
                 "tags": [
                     "Abstract",
                     "Meme",
@@ -394,7 +394,7 @@
                 "i": 2,
                 "f": "jpg",
                 "t": "Retro Chess Board",
-                "l": "CC-BY-ND-4.0",
+                "l": "CC BY-ND-4.0",
                 "tags": [
                     "Abstract",
                     "Meme",
@@ -408,7 +408,7 @@
                 "i": 3,
                 "f": "jpg",
                 "t": "Retro Podka Bubbles",
-                "l": "CC-BY-ND-4.0",
+                "l": "CC BY-ND-4.0",
                 "tags": [
                     "Abstract",
                     "Meme",
@@ -422,7 +422,7 @@
                 "i": 4,
                 "f": "jpg",
                 "t": "Zhuozhengyuan Bench",
-                "l": "CC-BY-NC-ND-4.0",
+                "l": "CC BY-NC-ND-4.0",
                 "tags": [
                     "Nature",
                     "Garden"
@@ -436,7 +436,7 @@
                 "i": 5,
                 "f": "jpg",
                 "t": "Jelly YSGD",
-                "l": "CC-BY-NC-ND-4.0",
+                "l": "CC BY-NC-ND-4.0",
                 "tags": [
                     "Meme"
                 ],
@@ -448,7 +448,7 @@
                 "i": 6,
                 "f": "jpg",
                 "t": "Weave 8",
-                "l": "CC-BY-NC-ND-4.0",
+                "l": "CC BY-NC-ND-4.0",
                 "tags": [
                     "Abstract"
                 ],
@@ -460,7 +460,7 @@
                 "i": 7,
                 "f": "jpg",
                 "t": "Ribbons Dark 8",
-                "l": "CC-BY-NC-ND-4.0",
+                "l": "CC BY-NC-ND-4.0",
                 "tags": [
                     "Abstract"
                 ],
@@ -472,7 +472,7 @@
                 "i": 8,
                 "f": "jpg",
                 "t": "Ribbons Light 8",
-                "l": "CC-BY-NC-ND-4.0",
+                "l": "CC BY-NC-ND-4.0",
                 "tags": [
                     "Abstract"
                 ],
@@ -484,7 +484,7 @@
                 "i": 9,
                 "f": "jpg",
                 "t": "Leaves Horizon",
-                "l": "CC-BY-NC-ND-4.0",
+                "l": "CC BY-NC-ND-4.0",
                 "tags": [
                     "Nature",
                     "Plant"
@@ -498,7 +498,7 @@
                 "i": 10,
                 "f": "jpg",
                 "t": "Mini White",
-                "l": "CC-BY-NC-ND-4.0",
+                "l": "CC BY-NC-ND-4.0",
                 "tags": [
                     "Nature",
                     "Plant"
@@ -518,7 +518,7 @@
         "wallpapers": [
             {
                 "i": 0,
-                "f": "png",
+                "f": "jpg",
                 "t": "Untitled Window Pic",
                 "l": "TBD",
                 "tags": [
@@ -531,7 +531,7 @@
             },
             {
                 "i": 1,
-                "f": "png",
+                "f": "jpg",
                 "t": "Willow Curtain",
                 "l": "TBD",
                 "tags": [
@@ -546,7 +546,7 @@
     },
     "szc1sya": {
         "uname": "szc1sya",
-        "name": "szc1sya",
+        "name": "Leo Shen",
         "email": "",
         "uri": "",
         "wallpapers": [
@@ -554,26 +554,26 @@
                 "i": 0,
                 "f": "jpg",
                 "t": "Untitled Window Pic",
-                "l": "TBD",
+                "l": "Public Domain",
                 "tags": [
                     "Nature",
                     "Plant"
                 ],
                 "uname": "szc1sya",
-                "name": "szc1sya",
+                "name": "Leo Shen",
                 "uri": ""
             },
             {
                 "i": 1,
-                "f": "png",
+                "f": "jpg",
                 "t": "Willow Curtain",
-                "l": "TBD",
+                "l": "Public Domain",
                 "tags": [
                     "Nature",
                     "Plant"
                 ],
                 "uname": "szc1sya",
-                "name": "szc1sya",
+                "name": "Leo Shen",
                 "uri": ""
             }
         ]
