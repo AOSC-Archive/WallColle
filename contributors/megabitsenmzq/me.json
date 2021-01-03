@@ -8,35 +8,35 @@
             "i": 0,
             "f": "jpg",
             "t": "Arakawa River",
-            "l": "CC BY",
+            "l": "CC BY 4.0",
             "tags": [ "Civil", "Metropolis" ]
         },
         {
             "i": 1,
             "f": "jpg",
             "t": "Flowers",
-            "l": "CC BY",
+            "l": "CC BY 4.0",
             "tags": [ "Nature", "Plant" ]
         },
         {
             "i": 2,
             "f": "jpg",
             "t": "Roof",
-            "l": "CC BY",
+            "l": "CC BY 4.0",
             "tags": [ "Civil", "Metropolis" ]
         },
         {
             "i": 3,
             "f": "jpg",
             "t": "Okutama Lake",
-            "l": "CC BY",
+            "l": "CC BY 4.0",
             "tags": [ "Nature", "Water" ]
         },
         {
             "i": 4,
             "f": "jpg",
             "t": "Leaves",
-            "l": "CC BY",
+            "l": "CC BY 4.0",
             "tags": [ "Nature", "Plant" ]
         }
     ]
