@@ -222,9 +222,7 @@ const finisherScript = function (manifestObj) {
                 <wallpaper delete="false">
                     <name>Campanula</name>
                     <filename>${abspathXml}</filename>
-                    <artist>${img.name}${
-                        img.email ? ' <' + img.email + '>' : ''
-                    }</artist>
+                    <artist>${img.name}</artist>
                     <options>zoom</options>
                 </wallpaper>
             </wallpapers>`);
